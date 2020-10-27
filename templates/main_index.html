@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html>
+
+<title>Flask Framework</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="{{url_for('static', filename='css/slayt.css')}}">
+
+<audio src="static/music/Forrest_Gump_Piano_Theme.mp3"></audio>	
+    <embed
+        name = "Forrest_Gump_Piano_Theme"
+		src="static/music/Forrest_Gump_Piano_Theme.mp3"
+        loop="false"
+        hidden="true"
+		autostart="true">
+</audio>
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: initial;
+  }
+/* First image (Logo. Full height) */
+.bgimg-1 {
+    background-image: url('https://www.w3schools.com/w3images/app.jpg');
+    min-height: 100%;
+  }
+/* Second image (Logo. Full height) */
+.bgimg-2 {
+    background-image: url('https://www.w3schools.com/w3images/parallax1.jpg');
+    min-height: 100%;
+  }
+/* Third image (Logo. Full height) */
+.bgimg-3 {
+    background-image: url('https://www.w3schools.com/w3images/man_smoke.jpg');
+    min-height: 100%;
+  }
+/* Fourth image (Logo. Full height) */
+.bgimg-4 {
+    background-image: url('https://www.w3schools.com/w3images/man_smoke.jpg');
+    min-height: 100%;
+  }   
+/*Set the width of the sidebar to 120px*/
+.w3-sidebar {width: 120px;background: #222;}
+/*Add a left margin to the 'page content' that matches the width of the sidebar (120px)*/
+#main {margin-left: 120px}
+/*Remove margins from "page content" on small screens*/
+@media only screen and (max-width: 600px) {
+    #main {
+        margin-left: 0px}
+    }
+</style>
+
+
+    <body class="w3-black">
+
+        <!--Icon Bar (Sidebar hidden on small screens)-->
+        <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+        <!-- Avatar image in top left corner -->
+        <img src="static/image/Canmaske.jpg" style="width:100%"><br><br><br><br><br>
+        <a href="#fixer" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-money w3-xxlarge"></i>
+            <p>FIXERIO</p>
+        </a>
+        <a href="#todo" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fas fa-calendar-check w3-xxlarge"></i>
+            <p>TODO LIST</p>
+        </a>
+        <a href="#github" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa fa-search w3-xxlarge"></i>
+            <p>GITHUB</p>
+        </a>
+        <a href="#cv" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-eye w3-xxlarge"></i>
+            <p>MY CV</p>
+        </a>
+        <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-envelope w3-xxlarge"></i>
+            <p>CONTACT</p>
+        </a>
+        </nav>
+
+        <!-- Navbar on small screens (Hidden on medium and large screens) -->
+        <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+        <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+            <a href="#fixer" class="w3-bar-item w3-button" style="width:25% !important">FIXERIO</a>
+            <a href="#todo" class="w3-bar-item w3-button" style="width:25% !important">TODO LIST</a>
+            <a href="#github" class="w3-bar-item w3-button" style="width:25% !important">GITHUB</a>
+            <a href="#cv" class="w3-bar-item w3-button" style="width:25% !important">MY CV</a>
+            <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
+        </div>
+        </div>
+
+        <!-- Page Content -->
+        <div class="w3-padding-large" id="main">
+            <!-- Header/Home -->
+            <header class="bgimg-3 w3-container w3-padding-32 w3-center w3-black" id="fixer">
+                <h2>Your are Welcome...</h2>
+                <div class="bgimg-3 container text-white">
+                        <p class="text-white-50 bg-dark"> <strong><small><em>This page created with <code>Flask Framework</code> in the <code>Python</code> by <abbr title="CAN AKYILDIZ">AKYILDIZ</abbr> for show make a simple a few basic app of the API use the <code>Flask Framework</code> and <code>Python.</code></em></strong></small></p>
+                </div>  
+                <h3 class="w3-padding-24 w3-text-light-grey">FIXERIO</h3>
+                <div class="w3-display-center w3-text-black" style="padding:48px">
+                    <div class="row">
+                        <div class="col-md-15 mx-auto">
+                            <div class="bgimg-3 card card-body text-center text-white mt-5">
+                                <h4 class="heading display-10 pb-3">Foreign Currency</h4>
+                            <form id="currency-form" method="post">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="bgimg-3 input-group-text" style="color:greenyellow;" >1. Currency</span>
+                                        <select class="bgimg-3 selectpicker btn-outline-secondary" style="color:gold;" name = "firstCurrency">
+                                        <option>USD</option>
+                                        <option>EUR</option>
+                                        <option>XAU</option>
+                                        <option>BTC</option>
+                                        <option>JPY</option>
+                                        <option>BGN</option>
+                                        <option>CZK</option>
+                                        <option>DKK</option>
+                                        <option>GBP</option>          
+                                        <option>HUF</option>
+                                        <option>PLN</option>
+                                        <option>RON</option>
+                                        <option>SEK</option>
+                                        <option>CHF</option>
+                                        <option>ISK</option>
+                                        <option>NOK</option>          
+                                        <option>HRK</option>
+                                        <option>RUB</option>
+                                        <option>TRY</option>
+                                        <option>AUD</option>
+                                        <option>BRL</option>          
+                                        <option>CAD</option>
+                                        <option>CNY</option>
+                                        <option>HKD</option>
+                                        <option>IDR</option>          
+                                        <option>ILS</option>
+                                        <option>INR</option>
+                                        <option>KRW</option>
+                                        <option>MXN</option>          
+                                        <option>MYR</option>
+                                        <option>NZD</option>
+                                        <option>PHP</option>
+                                        <option>SGD</option>
+                                        <option>THB</option>          
+                                        <option>ZAR</option>
+                                        </select>      
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="bgimg-3 input-group-text" style="color: greenyellow;" >2. Currency</span>
+                                        <select class="bgimg-3 selectpicker btn-outline-secondary" style="color: gold;" name = "secondCurrency">
+                                                <option>EUR</option>
+                                                <option>USD</option>
+                                                <option>XAU</option>
+                                                <option>BTC</option>
+                                                <option>JPY</option>
+                                                <option>BGN</option>
+                                                <option>CZK</option>
+                                                <option>DKK</option>
+                                                <option>GBP</option>          
+                                                <option>HUF</option>
+                                                <option>PLN</option>
+                                                <option>RON</option>
+                                                <option>SEK</option>
+                                                <option>CHF</option>
+                                                <option>ISK</option>
+                                                <option>NOK</option>          
+                                                <option>HRK</option>
+                                                <option>RUB</option>
+                                                <option>TRY</option>
+                                                <option>AUD</option>
+                                                <option>BRL</option>          
+                                                <option>CAD</option>
+                                                <option>CNY</option>
+                                                <option>HKD</option>
+                                                <option>IDR</option>          
+                                                <option>ILS</option>
+                                                <option>INR</option>
+                                                <option>KRW</option>
+                                                <option>MXN</option>          
+                                                <option>MYR</option>
+                                                <option>NZD</option>
+                                                <option>PHP</option>
+                                                <option>SGD</option>
+                                                <option>THB</option>          
+                                                <option>ZAR</option>
+                                            </select>
+                                    </div>
+                                </div>
+                                <div class="bgimg-3 form-group">
+                                    <input type="number" class="bgimg-3 form-control" style="color: greenyellow;" name = "amount" placeholder="Amount" min="0" required>
+                                </div>
+                                <div class="form-group">
+                                    <input href="/" id ="submitbtn" type="submit" value = "Calculate" class = "bgimg-3 btn btn-danger">
+                                </div>
+                            </form> 
+                            {% if info %}
+                        <div id="results" class = "pt-4">
+                            <h5>Result</h5>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="bgimg-3 input-group-text" style="color: gold;" >{{info.amount}} {{info.firstcurrency}} </span>
+                                    <div class="bgimg-3 form-control" style="color: gold;" id="total">
+                                       {{info.result }} {{info.secondcurrency}}
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                            {% endif %}
+                        </div>  
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+            </header>
+
+            <!-- TODO APP -->
+            
+            <div class="w3-content w3-justify w3-text-white w3-padding-64" id="todo">
+             <h3 class="w3-padding-24 w3-text-light-grey">TODO</h3> 
+                <div class="container-fluid">
+                        <div class="bgimg-3 container">
+                            <div class="container">
+                                  <div class="bgimg-3 container p-3 my-3 bg-primary bg-dark text-white">
+                                        <p class="bg-dark text-white"> <small>This the application in the page, you can create that to do list and if completed the on the substances in the list you can make marking.</small>
+                                        <p ><small><em><h5>Let's start;</small> <br>
+                                            <ul>
+                                            <p><small>
+                                            <li><p class="bg-dark text-white"><small>Firstly we enter to do substances in the todo list bar and after that we to push the <kbd>Add</kbd> button.</small></p></li>
+                                            <li><p class="bg-dark text-white"><small>Than we created our list, if the completed of sunstances in the list we can change True with to push the <kbd>Update</kbd> button.</small></p></li>
+                                            <li><p class="bg-dark text-white"><small>Finally if of the completed our missions we can remove in the our list with to push the <kbd>Delete</kbd> button.</small></p></li>
+                                            </small></p> 
+                                            </ul>  
+                                            </h5>
+                                            </em>
+                                        </p> 
+                                    </div>
+                            </div>
+                            <section class="home"></section>   
+                            <form action="/" method ="POST">
+                                <label for="ExampleInput">To do List</label>  
+                                <div class="input-group mb-3"> 
+                                    <input type="text" class="bgimg-3 form-control btn-outline-secondary" name="inp" placeholder="Add in the substances">
+                                    <hr>
+                                    <div class="input-group-append">
+                                    <button type="submit" class="btn btn-outline-secondary">Add</button>
+                                    <hr>
+                                    </div>
+                                </div>
+                            </form>
+                            
+                            {% if not todo %}
+                                <div class="alert-warning">
+                                    Data not found in database.
+                                    <br>
+                                </div>
+                                <br>
+                                <div class="alert-info">
+                                    Please your <a href="add" class="alert-link">enter</a>data...
+                                </div>
+                            {% else %}
+                                <br><table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Title</th>
+                                            <th scope="col">Complete</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Update</th>
+                                            <th scope="col">Delete</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for tod in todo %}
+                                
+                                            {% if tod.complete == False %}
+                                                <tr>
+                                                    <th scope="row">{{tod.ID}}</th>
+                                                    <td>{{tod.TITLE}}</td>
+                                                    <td>{{tod.complete}}</td>
+                                                    <td><i class='fa fa-spinner fa-pulse' style='font-size:24px;color:yellow' ></i></td>
+                                                    <td> <a href="/update/{{tod.ID}}" class="btn btn-warning btn-outline-warning" ><small><i><b>Update</b></i></small> </a></td>
+                                                    <td> <a href="/delete/{{tod.ID}}" class="btn btn-danger btn-outline-danger" ><i><small>Delete</small></i></a></td>
+                                                </tr>
+                                            {% else %}
+                                                <tr>
+                                                    <th scope="row">{{tod.ID}}</th>
+                                                    <td>{{tod.TITLE}}</td>
+                                                    <td>{{tod.complete}}</td>
+                                                    <td><i class='far fa-calendar-check' style='font-size:24px;color:green' ></i></td>
+                                                    <td> <a href="/update/{{tod.ID}}" class="btn btn-warning btn-outline-warning" name="update" ><small><i><b>Update</b></i></small> </a></td>
+                                                    <td> <a href="/delete/{{tod.ID}}" class="btn btn-danger btn-outline-danger" ><i><small>Delete</small></i></a></td>
+                                                </tr>
+                                            {% endif %}
+                                        {% endfor %}              
+                                        </tbody>
+                                    </table> 
+                            {% endif %}
+                        </div>
+                </div>       
+                         
+                <!-- End Grid/Pricing tables -->
+                </div>
+            <!-- End About Section -->
+            </div>
+
+            <!-- GITHUB --> -->
+
+            
+            <div class="w3-padding-64 w3-content w3-text-grey" id="github">
+             <h3 class="w3-padding-24 w3-text-light-grey">GITHUB</h3> 
+                <div class="bgimg-3 container searchContainer">
+                    <!--<h4 class="w3-padding-16 w3-text-white">Github</h4>-->
+                    <div class="bgimg-3 search card card-body w3-text-white">
+                        <p><small><em><h5>Search User of the Github 
+                            <p><h6>You enter a username. You access information of the user...</h6></p>
+                        </em></small></p></h5>
+                        <form action="/" method="post">
+                            <input type="text" name="githubname" class = "bgimg-3 form-control btn-outline-secondary" placeholder="Github Username">
+                            <br>
+                            <button type = "submit" class ="btn btn-danger btn-outline-secondary">Search</button>
+                        </form>
+                    </div>
+                    {% if user %}
+                        <div id= "user">
+                            <div class="bgimg-3 card card-body mb-3">
+                                <div class="row">
+                                <div class="bgimg-3 col-md-3">
+                                    <img class="img-fluid mb-2" src="{{user.avatar_url}}">
+                                    <a href="{{user.html_url}}" target="_blank" class="btn btn-danger btn-block mb-4 btn-outline-danger">View Profile</a>
+                                    <span class="badge badge-primary">ID: {{user.id}} = {{user.login}}</span>
+                                    <span class="badge badge-secondary">Member Type: {{user.type}}</span>                
+                                </div>
+                                <div class="bgimg-3 col-md-9">
+                                    <span class="badge badge-primary">Repo Count: {{user.public_repos}}</span>
+                                    <span class="badge badge-secondary">Gist Count: {{user.public_gists}}</span>
+                                    <span class="badge badge-success">Followers: {{user.followers}}</span>
+                                    <span class="badge badge-info">Following: {{user.following}}</span>
+                                    <br><br>
+                                    <ul class="bgimg-3 list-group" style="color: whitesmoke;">
+                                        <li class="list-group">Name:  {{user.name}}</li>
+                                        <li class="list-group">Bio:  {{user.bio}}</li>
+                                        <li class="list-group">Company:  {{user.company}}</li>
+                                        <a href="{{user.blog}}" target="_blank"><li class="list-group">Website/Blog: {{user.blog}}</li></a>
+                                        <li class="list-group">Location:  {{user.location}}</li>
+                                        <li class="list-group">Membership Date:  {{user.created_at}}</li>
+                                    </ul>
+                                </div>
+                                <!-- Repoların Gösterileceği Kısım" -->
+                                </div>
+                                <hr>
+                                    
+                                    <div id="repos" style ="margin-bottom: 20px;" class="w3-text-white">
+                                        <p><small><em><h4 class="page-heading mb-3">Last repos</h4></em></small></p>
+                                        {% for repo in repos %}
+                                            <div class="bgimg-3 card card-body mb-2">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <span>{{repo.name}} ---> </span>
+                                                        <a href="{{repo.html_url}}" target = "_blank" class = "btn btn-danger btn-outline-danger">Go to repo</a>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <span class="badge badge-primary">Stargazers: {{repo.stargazers_count}}</span>
+                                                        <span class="badge badge-primary">Watchers: {{repo.watchers}}</span>
+                                                        <span class="badge badge-success">Forks: {{repo.forks}}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endfor %} 
+                                    </div>
+                                    <hr>
+                            </div>
+                        </div>              
+                    {% else %}
+                        {% if error %}
+                            <div class="alert alert-warning">
+                            <strong>!!! Warning...</strong> <small>Not found user your to the searching name...</small>
+                            <!--{{error}}-->
+                            </div>
+                        {% else %}
+                        <div id= "user">
+                            <div class="bgimg-3 card card-body mb-3">
+                                <div class="row">
+                                <div class="bgimg-3 col-md-3">
+                                    <img class="img-fluid mb-2" src="static/image/Kira2.jpg">
+                                    <a href="https://github.com/akyildizcan" target="_blank" class="btn btn-danger btn-block mb-4 btn-outline-danger">View Profile</a>
+                                    <span class="badge badge-primary">ID: 72750415 = akyildizcan</span>
+                                    <span class="badge badge-secondary">Member Type: User</span>                
+                                </div>
+                                <div class="bgimg-3 col-md-9">
+                                    <span class="badge badge-primary">Repo Count: 1</span>
+                                    <span class="badge badge-secondary">Gist Count: 0</span>
+                                    <span class="badge badge-success">Followers: 0</span>
+                                    <span class="badge badge-info">Following: 0</span>
+                                    <br><br>
+                                    <ul class="bgimg-3 list-group" style="color: whitesmoke;">
+                                        <li class="list-group">Name:  Can AKYILDIZ</li>
+                                        <li class="list-group">Bio:  Communication Engineer</li>
+                                        <li class="list-group">Company:  None</li>
+                                        <li class="list-group">Website/Blog: https://www.linkedin.com//in/can-akyildiz-802883185/ <a href="http://akyildizcan.pythonanywhere.com" target="_blank">http://akyildizcan.pythonanywhere.com</a></li>
+                                        <li class="list-group">Location:  İstanbul</li>
+                                        <li class="list-group">Membership Date:  12.10.2020</li>
+                                    </ul>
+                                </div>
+                                <!-- Repoların Gösterileceği Kısım" -->
+                                </div>
+                                <hr>
+                                    
+                                    <div id="repos" style ="margin-bottom: 20px;" class="w3-text-white">
+                                        <p><small><em><h4 class="page-heading mb-3">Last repos</h4></em></small></p>
+                                            <div class="bgimg-3 card card-body mb-2">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <span>FlaskTodo ---> </span>
+                                                        <a href="https://github.com/akyildizcan/FlaskTodo" target = "_blank" class = "btn btn-danger btn-outline-danger">Go to repo</a>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <span class="badge badge-primary">Stargazers: 0</span>
+                                                        <span class="badge badge-primary">Watchers: 0</span>
+                                                        <span class="badge badge-success">Forks: 0</span>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                    </div>
+                                    <hr>
+                            </div>
+                        </div>                
+                        {% endif %}
+                    {% endif %}
+                </div>
+                <!-- End photo grid -->
+                 <!-- Testimonials -->
+                 <h3 class="w3-padding-24 w3-text-light-grey">My Reputation</h3>  
+                 <a href="https://www.linkedin.com/in/g%C3%BCrkan-%C3%A7al%C4%B1k-b1ab9917a/" target="_blank"><img src="static/image/Gürko.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px"></a>
+                 <a href="https://www.linkedin.com/in/g%C3%BCrkan-%C3%A7al%C4%B1k-b1ab9917a/" target="_blank"><p><span class="w3-large w3-margin-right">Gürkan ÇALIK.</span></a> RNP/RNO Constultant at the P.I. Works.</p>
+                 <p>You CAN.You DO. No one is better than Can AKYILDIZ.</p><br>
+                 
+                 <a href="https://www.linkedin.com/in/hikmetcakmak61/" target="_blank"><img src="static/image/Hiko.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px"></a>
+                 <a href="https://www.linkedin.com/in/hikmetcakmak61/" target="_blank"><p><span class="w3-large w3-margin-right">Hikmet ÇAKMAK.</span></a> E-Commerce Specialist and Marketing Product Manager. </p>
+                 <p>Can AKYILDIZ saved us from a web disaster.</p>
+                </div>
+            <!-- End Portfolio Section -->
+            </div>
+            
+            <!-- Portfolio Section -->
+            <div class="w3-padding-64 w3-content" id="cv">
+                <h2 class="w3-text-light-grey">My CV</h2>
+                <hr style="width:200px" class="w3-opacity">
+
+                <!-- Grid for photos -->
+                <div class="w3-row-padding" style="margin:0 -16px">
+                <div class="w3-half">
+                    <!--<a class="example-image-link" href="static/image/cv1.PNG" data-lightbox="example-set" data-title="Click the right half of the image to move forward." target="blank"><img class="example-image" src="static/image/cv1.PNG" alt="Golden Gate Bridge with San Francisco in distance" style="width:100%"></a>
+                    <a class="example-image-link" href="static/image/cv2.PNG" data-lightbox="example-set" data-title="Click the right half of the image to move forward."target="blank"><img class="example-image" src="static/image/cv2.PNG" alt="Golden Gate Bridge with San Francisco in distance" style="width:100%"></a>
+                    <img src="static/image/cv3.PNG" style="width:100%">-->
+
+                        <!-- Images used to open the lightbox -->
+                        <img src="static/image/cv1.PNG" onclick="openModal();currentSlide(1)" class="shadow" style="width:100%">               
+                        <img src="static/image/cv2.PNG" onclick="openModal();currentSlide(2)" class="shadow" style="width:100%">
+                        <img src="static/image/cv3.PNG" onclick="openModal();currentSlide(3)" class="shadow" style="width:100%"> 
+
+                        <!-- The Modal/Lightbox -->
+                        <div id="myModal" class="modal">
+                            <span class="close cursor" onclick="closeModal()">&times;</span>
+                            <div class="modal-content">
+                        
+                            <div class="mySlides">
+                                <div class="numbertext">1 / 3</div>
+                                <img src="static/image/cv1.PNG" style="width:100%">
+                            </div>
+                        
+                            <div class="mySlides">
+                                <div class="numbertext">2 / 3</div>
+                                <img src="static/image/cv2.PNG" style="width:100%">
+                            </div>
+                        
+                            <div class="mySlides">
+                                <div class="numbertext">3 / 3</div>
+                                <img src="static/image/cv3.PNG" style="width:100%">
+                            </div>
+                        
+                            
+                            <!-- Next/previous controls -->
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        
+                            <!-- Caption text -->
+                            <div class="caption-container">
+                                <p id="caption"></p>
+                            </div>
+                        
+                            <!--Thumbnail image controls 
+                            <div class="column">
+                                <img class="demo" src="static/image/cv1.PNG" onclick="currentSlide(1)" alt="Personality">
+                            </div>
+                        
+                            <div class="column">
+                                <img class="demo" src="static/image/cv2.PNG" onclick="currentSlide(2)" alt="Work Experience">
+                            </div>
+                        
+                            <div class="column">
+                                <img class="demo" src="static/image/cv3.PNG" onclick="currentSlide(3)" alt="İnformation">
+                            </div>-->
+                            </div>
+                        </div>
+                </div>
+
+                <div class="w3-half">
+                    <img src="static/image/Can1.jpg" style="width:100%">
+                    <img src="static/image/Certificate.PNG" style="width:100%">
+                    <img src="static/image/CertificateD.PNG" style="width:100%">
+                    <img src="https://www.w3schools.com//w3images/p6.jpg" style="width:100%">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+                      </div>
+                    
+                </div>
+                <!-- End photo grid -->
+                </div>
+            <!-- End Portfolio Section -->
+            </div>
+            <!-- Contact Section -->
+            <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+                <h2 class="w3-text-light-grey">Contact Me</h2>
+                <hr style="width:200px" class="w3-opacity">
+
+                <div class="w3-section">
+                <a href="https://www.google.com/maps/place/Pendik%2F%C4%B0stanbul/@40.8785959,29.2595436,15z/data=!4m5!3m4!1s0x14cad70fd26705e3:0xcbd4c281a7b18cea!8m2!3d40.8809447!4d29.257742" target="_blank"><p><i class="fa fa-map-marker fa-fw w3-text-white w3-large w3-margin-right"></i> İstanbul, TR</p></a>
+                <p><i class="fa fa-phone fa-fw w3-text-white w3-large w3-margin-right"></i> Phone: +90 5456472356</p>
+                <a href="mailto:akyildizcan@outlook.com.tr" target="_blank"><p><i class="fa fa-envelope fa-fw w3-text-white w3-large w3-margin-right"></i>Email: akyildizcan@outlook.com.tr</p></a>
+                </div><br>
+                <p>Let's get in touch. Send me a message:</p>
+                <!--
+                <form action="/action_page.php" target="_blank">
+                <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
+                <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
+                <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
+                <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
+                <p>
+                    <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+                    <i class="fa fa-paper-plane"></i> SEND MESSAGE
+                    </button>
+                </p>
+                </form>-->
+            <!-- End Contact Section -->
+            </div>
+            
+                <!-- Footer -->                          
+            <footer class="w3-content w3-padding-64 w3-text-white w3-xlarge">
+                <a href="https://www.instagram.com/allinfunapp/?igshid=115usiml02llh" target="_blank"><i class="fas fa-user-plus w3-hover-opacity"></i></a>
+                <a href="https://twitter.com/AllinFunApp?s=08" target="_blank"><i class="fas fa-dove w3-hover-opacity"></i></a>
+                <a href="https://www.linkedin.com//in/can-akyildiz-802883185/" target="_blank"><i class="fa fa-share-alt"></i></a>
+                <a href="mailto:canakyildiz1@gmail.com" target="_blank"><i class="fa fa-envelope-square w3-hover-opacity"></i></a>
+                <p class="w3-medium">Powered by <a href="https://play.google.com/store/apps/details?id=com.ekenapp.allinfun.free" target="_blank" class="w3-hover-text-green">AllinFun</a></p>
+            <!-- End footer -->
+            </footer>
+
+            <!-- END PAGE CONTENT -->
+            </div>
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+            <script>
+                // Open the Modal
+                function openModal() {
+                  document.getElementById("myModal").style.display = "block";
+                }
+                
+                // Close the Modal
+                function closeModal() {
+                  document.getElementById("myModal").style.display = "none";
+                }
+                
+                var slideIndex = 1;
+                showSlides(slideIndex);
+                
+                // Next/previous controls
+                function plusSlides(n) {
+                  showSlides(slideIndex += n);
+                }
+                
+                // Thumbnail image controls
+                function currentSlide(n) {
+                  showSlides(slideIndex = n);
+                }
+                
+                function showSlides(n) {
+                  var i;
+                  var slides = document.getElementsByClassName("mySlides");
+                  var dots = document.getElementsByClassName("demo");
+                  var captionText = document.getElementById("caption");
+                  if (n > slides.length) {slideIndex = 1}
+                  if (n < 1) {slideIndex = slides.length}
+                  for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                  }
+                  for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                  }
+                  slides[slideIndex-1].style.display = "block";
+                  dots[slideIndex-1].className += " active";
+                  captionText.innerHTML = dots[slideIndex-1].alt;
+                }
+                </script>
+                
+        </body>
+</html>
